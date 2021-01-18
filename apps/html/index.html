@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="hh">你好</div>
+    <button type="button" onclick="loadXMLDoc()">点击</button>
+</body>
+
+
+<script>
+    function loadXMLDoc() {
+        var xmlhttp;
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", "/a", true);
+        xmlhttp.send();xmlhttp.onreadystatechange = 
+        function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("hh").innerHTML = xmlhttp.responseText;
+            }
+        }
+    }
+</script>
+
+</html>
